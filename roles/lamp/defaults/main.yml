@@ -1,5 +1,7 @@
 cache_update_valid_secs: 900
 
+
+
 boot_config: /boot/config.txt
 git_repo_url: "git@github.com:cpt22/MoonLamp.git"
 git_repo_branch: master
