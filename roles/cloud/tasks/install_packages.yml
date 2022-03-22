@@ -1,0 +1,24 @@
+
+- name: update apt cache
+  become: yes
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+
+- name: upgrade everything
+  become: yes
+  apt:
+    upgrade: 'yes'
+    force_apt_get: yes
+
+- name: install git
+  become: yes
+  apt:
+    name: ['git']
+    cache_valid_time: "{{ cache_update_valid_secs }}"
+
+- name: install python3
+  become: yes
+  apt:
+    name: ['python3']
+    cache_valid_time: "{{ cache_update_valid_secs }}"

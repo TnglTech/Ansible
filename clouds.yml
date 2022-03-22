@@ -1,0 +1,4 @@
+#cloud playbooks
+- hosts: cloud
+  roles:
+    - cloud

@@ -1,0 +1,4 @@
+#lamp playbooks
+- hosts: lamp
+  roles:
+    - lamp

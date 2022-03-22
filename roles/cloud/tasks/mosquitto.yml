@@ -1,0 +1,22 @@
+- name: install mosquitto and client tools
+  become: yes
+  apt:
+    name: ['mosquitto', 'mosquitto-clients']
+
+- name: add new mosquitto config
+  become: True
+  template:
+    dest: /etc/mosquitto/conf.d/port.conf
+    src: mqtt_port.conf
+    force: yes
+
+- name: restart mosquitto
+  become: True
+  service:
+    name: mosquitto
+    state: restarted
+
+- name: install Paho Python MQTT client library
+  become: True
+  pip:
+    name: paho-mqtt

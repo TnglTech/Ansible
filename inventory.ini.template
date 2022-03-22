@@ -1,0 +1,13 @@
+lamp1 ansible_user=pi ansible_ssh_host=<lamp IP>
+
+
+cloud_remote ansible_user=ansible ansible_ssh_host=<cloud IP>
+
+[lamps]
+lamp1
+
+[cloud]
+cloud_remote
+
+[cloud:vars]
+ansible_python_interpreter=/usr/bin/python3

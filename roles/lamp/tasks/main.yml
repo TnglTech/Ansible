@@ -1,0 +1,9 @@
+- import_tasks: basics.yml
+- import_tasks: install_packages.yml
+- import_tasks: pip.yml
+- import_tasks: mosquitto.yml
+- import_tasks: ws2811.yml
+- import_tasks: repo.yml
+- import_tasks: nodejs.yml
+- import_tasks: bleno.yml
+- import_tasks: supervisor.yml

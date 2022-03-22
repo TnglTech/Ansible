@@ -1,0 +1,5 @@
+- name: install ws2811 library
+  become: True
+  pip:
+    name:
+      - rpi_ws281x
