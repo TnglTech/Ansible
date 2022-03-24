@@ -5,14 +5,13 @@
     name: libudev-dev
     cache_valid_time: "{{ cache_update_valid_secs }}"
 
-- name: install bleno and mqtt via npm
+- name: install pybleno via pip
+  become: True
   tags: bleno
-  shell: . {{ nvm_path }} && npm install "{{ item }}"
-  args:
-    executable: /bin/bash
-  with_items:
-    - bleno
-    - mqtt
+  pip:
+    executable: pip3
+    name:
+      - pybleno
 
 - name: stop bluetooth daemon
   become: True
@@ -28,10 +27,10 @@
     name: bluetooth
     enabled: no
 
-- name: grant node the permissions to use bluetooth without being root
+- name: grant python the permissions to use bluetooth without being root
   become: True
   tags: bleno
-  shell: . {{ nvm_path }} && setcap cap_net_raw+eip $(eval readlink -f `which node`)
+  shell: setcap cap_net_raw+eip $(eval readlink -f `which python3`)
   args:
     executable: /bin/bash
 
