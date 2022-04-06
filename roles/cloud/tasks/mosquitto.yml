@@ -1,7 +1,9 @@
 - name: install mosquitto and client tools
   become: yes
   apt:
-    name: ['mosquitto', 'mosquitto-clients']
+    name:
+      - mosquitto
+      - mosquitto-clients
 
 - name: add new mosquitto config
   become: True

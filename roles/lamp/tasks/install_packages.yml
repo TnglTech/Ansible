@@ -18,5 +18,7 @@
 - name: install python3
   become: yes
   apt:
-    name: ['python3', 'python-is-python2']
+    name:
+      - python3
+      - python-is-python2
     cache_valid_time: "{{ cache_update_valid_secs }}"

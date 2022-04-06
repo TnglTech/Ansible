@@ -14,11 +14,31 @@
 - name: install git
   become: yes
   apt:
-    name: ['git']
+    name: git
     cache_valid_time: "{{ cache_update_valid_secs }}"
 
 - name: install python3
   become: yes
   apt:
-    name: ['python3']
+    name:
+      - python3
+      - python-is-python3
     cache_valid_time: "{{ cache_update_valid_secs }}"
+
+- name: install supervisor
+  become: True
+  apt:
+    name: supervisor
+    cache_valid_time: "{{ cache_update_valid_secs }}"
+
+- name: some hackery to make Supervisor work - part1
+  become: True
+  systemd:
+    name: supervisor
+    enabled: yes
+
+- name: some hackery to make Supervisor work - part2
+  become: True
+  systemd:
+    name: supervisor
+    state: restarted

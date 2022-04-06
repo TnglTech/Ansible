@@ -1,0 +1,13 @@
+- name: install supervisor configuration file for mqtt-daemon
+  become: True
+  template:
+    dest: /etc/supervisor/conf.d/mqtt-daemon.conf
+    owner: root
+    mode: u+rw,g=r,o=r
+    src: mqtt-daemon.conf
+
+- name: make supervisord aware of our new program
+  become: True
+  supervisorctl:
+    name: mqtt-daemon
+    state: "present"

@@ -6,6 +6,9 @@ cloud_remote ansible_user=ansible ansible_ssh_host=<cloud IP>
 [lamps]
 lamp1
 
+[lamps:vars]
+cloud_url=mooncloud.cptingle.com
+
 [cloud]
 cloud_remote
 

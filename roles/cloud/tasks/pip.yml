@@ -1,7 +1,9 @@
 - name: remove Debian pip (python-pip)
   become: True
   apt:
-    name: ['python-pip', 'python3-pip']
+    name:
+      - python-pip
+      - python3-pip
     cache_valid_time: "{{ cache_update_valid_secs }}"
     state: absent
 

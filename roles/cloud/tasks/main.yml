@@ -2,3 +2,5 @@
 - import_tasks: pip.yml
 - import_tasks: mosquitto.yml
 - import_tasks: web.yml
+- import_tasks: uwsgi.yml
+- import_tasks: mqtt-daemon.yml
