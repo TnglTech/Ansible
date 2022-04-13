@@ -27,15 +27,15 @@
 - name: install our uwsgi Django configuration
   become: True
   template:
-    src: moonsite_uwsgi.ini
-    dest: "{{ django_dir }}/moonsite_uwsgi.ini"
+    src: tnglsite_uwsgi.ini
+    dest: "{{ django_dir }}/tnglsite_uwsgi.ini"
 
 
-- name: link moonsite uwsgi file to uwsgi vassals
+- name: link tnglsite uwsgi file to uwsgi vassals
   become: True
   file:
-    path: /etc/uwsgi/vassals/moonsite_uwsgi.ini
-    src: "{{ django_dir }}/moonsite_uwsgi.ini"
+    path: /etc/uwsgi/vassals/tnglsite_uwsgi.ini
+    src: "{{ django_dir }}/tnglsite_uwsgi.ini"
     state: link
 
 - name: add uwsgi supervisor configuration
@@ -82,14 +82,14 @@
 - name: install our new NGINX Django configuration
   become: True
   template:
-    dest: /etc/nginx/sites-available/moonsite.conf
-    src: moonsite_nginx.conf
+    dest: /etc/nginx/sites-available/tnglsite.conf
+    src: tnglsite_nginx.conf
 
 - name: link nginx configuration
   become: True
   file:
-    src: /etc/nginx/sites-available/moonsite.conf
-    dest: /etc/nginx/sites-enabled/moonsite.conf
+    src: /etc/nginx/sites-available/tnglsite.conf
+    dest: /etc/nginx/sites-enabled/tnglsite.conf
     state: link
 
 - name: install new top-level NGINX configuration

@@ -2,10 +2,10 @@
 
 cache_update_valid_secs: 900
 
-git_repo_url: "git@github.com:cpt22/MoonLampCloud.git"
-repo_directory: /home/django_user/moonlamp
+git_repo_url: "git@github.com:TnglTech/Cloud.git"
+repo_directory: /home/django_user/tnglcloud
 git_repo_branch: master
-root_web_directory: /home/django_user/moonlamp/moonsite/static
+root_web_directory: /home/django_user/tnglcloud/tnglsite/static
 
-django_dir: "{{repo_directory}}/moonsite"
-django_settings: "moonsite.settings"
+django_dir: "{{repo_directory}}/tnglsite"
+django_settings: "tnglsite.settings"
